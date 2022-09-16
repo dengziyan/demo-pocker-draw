@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=	, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		*{margin: 0;padding:0;}
+body,html{font-size: 50px;}		
+.box{ height:8.78rem; width: 7.5rem;  background-size: auto 100%; margin-top: -.2rem; position: relative;}
+.box .con{ padding: .2rem .24rem 0 .45rem; height: 8.3rem; position: relative; font-size: 0; line-height: 0;}
+.box .con .item{position: absolute; width: 2.16rem; height: 2.07rem; overflow: hidden; font-size: .16rem; line-height: .32rem; display: inline-block; vertical-align: middle; text-align: center; color: #666; transition: .05s;}
+.box .con .item .info{ display:block; width: 2.16rem; height: 2.07rem; background: pink;border-radius: 8px;}
+.box .con .item .info .name{padding: 0 10px;box-sizing: border-box;width: 2.16rem;height: 2.07rem; line-height: 2.07rem; font-size: .17rem; font-weight: bold; color:#f07326; overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align: center;}
+.box .con .item .info .intr{ padding: 0 .1rem; height: .38rem; line-height: .32rem; overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.box .con .item .info .intr img{ max-height:.36rem; max-width: 1rem; display: inline-block;}
+.box .con .item .fanmian{ opacity: 0; width: 2.16rem;  height: 2.07rem; background: #A0C3E1;border-radius: 8px; transition: opacity .3s;padding-top: 10px;box-sizing: border-box;}
+.box .con .item .fanmian span{display: block;width: 50px;height: 50px;background: #fff;border-radius: 50%;margin: 0 auto;text-align: center;line-height: 50px;font-size: 20px;color: blue;}
+.box .con .item-back .info{display: none;}
+.box .con .item-back .fanmian{opacity: 1; transition: opacity .3s;}
+.box .con .item1{ left:.45rem; top: .2rem; }
+.box .con .item2{ left:2.67rem; top: .2rem;}
+.box .con .item3{ left:4.92rem; top: .2rem;}
+.box .con .item4{ left:.45rem; top: 2.32rem;}
+.box .con .item5{ left:2.67rem; top: 2.32rem;}
+.box .con .item6{ left:4.92rem; top: 2.32rem;}
+.box .con .item7{ left:.45rem; top: 4.44rem;}
+.box .con .item8{ left:2.67rem; top: 4.44rem;}
+.box .con .item9{ left:4.92rem; top: 4.44rem;}
+.box .con .item10{ left:.45rem; top: 6.56rem;}
+.box .con .item11{ left:2.67rem; top: 6.56rem;}
+.box .con .item12{ left:4.92rem; top: 6.56rem;}
+
+
+.box .con .focus{ left: 50%; top: 45%; margin-left: -1.08rem; transition: .9s; z-index: 9;}
+
+.fanzhuan{
+  animation: animt-fanzhuan 1s;
+}
+@keyframes animt-fanzhuan{
+  0% {
+    transform: perspective(4.22rem) rotateY(0deg);
+  } 
+  50% {
+    transform: perspective(4.22rem) rotateY(0deg);
+  } 
+  100% {
+    transform: perspective(4.22rem) rotateY(179.9deg);
+  }
+}
+.xipai{width: 100px;height: 50px;background: pink;font-size: 16px;text-align: center;line-height: 50px;margin-left: 137px;}
+
+.pop-mask{position: fixed;left: 0;right: 0;top: 0;bottom:0;background: rgba(1,1,1,0.6);}
+.pop-mask .pop-con{width: 200px;height: 200px;position: absolute;left: 50%;top:50%;transform: translate(-50%,-50%);background: #fff;border-radius: 8px;}
+.pop-mask .close{position: absolute;right: 10px;top: 10px;height: 20px;width: 20px;display: block;font-size:20px;text-align: center;line-height: 17px;background: rgba(1,1,1,0.5);border-radius:50%;}
+.pop-mask .name{font-size:14px;color: orange;text-align: center;overflow: hidden;text-overflow: ellipsis;white-space:nowrap;line-height: 200px}
+.i-hide{
+  display: none !important;
+}
+</style>
+
+</head>
+<body>
+	<div class="box">
+	    <div class="con" id="goodsList">
+	      <div class="item item1" data-id="1">
+	        <div class="info">
+	          <div class="name j-name">奖品名称</div>
+	        </div>
+	        <div class="fanmian"><span>翻</span></div>
+	      </div>
+	      <div class="item item2">
+	        <div class="info">
+	          <div class="name j-name">奖品名称</div>
+	        </div>
+	        <div class="fanmian"><span>翻</span></div>
+	      </div>
+	      <div class="item item3">
+	        <div class="info">
+	          <div class="name j-name">奖品名称</div>
+	        </div>
+	        <div class="fanmian"><span>翻</span></div>
+	      </div>
+	      <div class="item item4">
+	        <div class="info">
+	          <div class="name j-name">奖品名称</div>
+	        </div>
+	        <div class="fanmian"><span>翻</span></div>
+	      </div>
+	      <div class="item item5">
+	        <div class="info">
+	          <div class="name j-name">奖品名称</div>
+	        </div>
+	        <div class="fanmian"><span>翻</span></div>
+	      </div>
+	      <div class="item item6">
+	        <div class="info">
+	          <div class="name j-name">奖品名称</div>
+	        </div>
+	        <div class="fanmian"><span>翻</span></div>
+	      </div>
+	      <div class="item item7">
+	        <div class="info">
+	          <div class="name j-name">奖品名称</div>
+	        </div>
+	        <div class="fanmian"><span>翻</span></div>
+	      </div>
+	      <div class="item item8">
+	        <div class="info">
+	          <div class="name j-name">奖品名称</div>
+	        </div>
+	        <div class="fanmian"><span>翻</span></div>
+	      </div>
+	      <div class="item item9">
+	        <div class="info">
+	          <div class="name j-name">奖品名称</div>
+	        </div>
+	        <div class="fanmian"><span>翻</span></div>
+	      </div>
+	      <div class="item item10">
+	        <div class="info">
+	          <div class="name j-name">奖品名称</div>
+	        </div>
+	        <div class="fanmian"><span>翻</span></div>
+	      </div>
+	      <div class="item item11">
+	        <div class="info">
+	          <div class="name j-name">奖品名称</div>
+	        </div>
+	        <div class="fanmian"><span>翻</span></div>
+	      </div>
+	      <div class="item item12">
+	        <div class="info">
+	          <div class="name j-name">奖品名称</div>
+	        </div>
+	        <div class="fanmian"><span>翻</span></div>
+	      </div>
+	    </div>
+	</div>
+    <div class="xipai" id="xipai">
+    	点击洗牌
+    </div>
+    <!-- 弹窗 -->
+    <div class="pop-mask i-hide" id="popPrize">
+    	<div class="pop-con">
+    		<span class="close j-close">×</span>
+    		<div class="name j-name">奖品名称</div>
+    	</div>
+    </div>
+
+    <script src="js/jquery.js"></script>
+	<script>
+//奖品数据
+prizeData=[
+	{ id:"1",name:"吹风筒"},
+	{ id:"2",name:"电饭锅"},
+	{ id:"3", name:"剃须刀"},
+	{ id:"4",name:"按摩仪"},
+	{ id:"5",name:"口红"},
+	{ id:"6",name:"京东E卡"},
+	{ id:"7",name:"水壶"},
+	{ id:"8",name:"华为手机"},
+	{ id:"9",name:"天堂伞"},
+	{ id:"10",name:"书包"},
+	{ id:"11",name:"玩具"},
+	{ id:"12",name:"抱枕被"}
+]
+lotteryData(prizeData); 
+//初始化抽奖数据
+function lotteryData(data){
+  var $goodsList=$("#goodsList");
+  $goodsList.find(".item").each(function(){
+    var $this=$(this);
+    var i=$this.index();
+    $this.attr("data-id",data[i].id);
+    $this.find(".j-name").text(data[i].name);
+  })
+}
+//洗牌
+xipai();
+
+//洗牌
+var xipaiTimeout=null;
+function xipai(){
+  $("#xipai").on("click",function(){
+    var $goodsList=$("#goodsList");
+    $goodsList.find(".item").addClass("focus item-back");
+    setTimeout(function(){$goodsList.find(".item").removeClass("focus");},1000);
+  })
+}
+fanpaiDraw();
+
+//翻牌抽奖
+function fanpaiDraw(){
+  var $goodsList=$("#goodsList");
+  
+  $goodsList.on("click",".item .fanmian",function(){
+    var $this=$(this);
+    var $item=$this.closest(".item");
+    $this.addClass("fanzhuan");
+    setTimeout(function(){
+      $item.removeClass("item-back");
+    },700);
+    
+    setTimeout(function(){
+      $item.siblings(".item").removeClass("item-back");
+    },2000)
+    
+    
+    var goodsData=prizeData[$item.index()];
+    setTimeout(function(){
+      popup.popShow("#popPrize",function(){
+        var $popPrize=$("#popPrize");
+        $popPrize.find(".j-name").text(goodsData.name);
+      });
+    },1500)
+    
+    
+  })
+}
+
+//弹出窗
+var popup={
+  // 显示弹窗
+  popShow:function(popId,callback){
+    var $pop=$(popId);
+    $pop.removeClass("i-hide");
+    
+    $pop.on("click",".j-close",function(){
+      popup.popClose(popId);
+    })
+    if(callback){
+      callback()
+    }
+    
+  },
+  //关闭弹窗
+  popClose:function(popId,callback){
+    if(callback){
+      callback()
+    }
+    var $pop=$(popId);
+    $pop.addClass("i-hide");
+  }
+}
+
+	</script>
+</body>
+</html>
